@@ -3,7 +3,7 @@ iframe.setAttribute("src", src());
 
 function src(){
 
-	return "https://cdnp.kink.com/imagedb/104794/trailer/104794_trailer_high.mp4"
+	return "https://cdnp.kink.com/imagedb/104794/trailer/104794_trailer_high.mp4";
 
 	/*
 	100k https://cdnp.kink.com/imagedb/104792/trailer/104792_trailer_high.mp4

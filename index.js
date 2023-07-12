@@ -1,7 +1,7 @@
 let start = 44284;
 let checktime = 2000;
 video = document.querySelector('video');
-video.volume = 0;
+video.volume = 0.1;
 video.controls = 1;
 video.autoplay = 1;
 video.src = "https://cdnp.kink.com/imagedb/"+start+"/v/h/320/hires/"+start+"_7.mp4";

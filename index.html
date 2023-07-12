@@ -3,13 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title></title>
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <main>
-        <iframe src="https://cdnp.kink.com/imagedb/104792/trailer/104792_trailer_high.mp4" width="90%" height="90%"></iframe>
+				<div class="content">
+					<video src=""></video>
+				</div>
+				<div class="content">
+					<input id="tb" type="text"/>
+					<input id="submit" type="button" value="Submit" onclick="exact()"/>
+					<input type="button" value="<" onclick="prev()"/>
+					<h2 id="vn"></h2>
+					<input type="button" value=">" onclick="next()"/>
+				</div>
     </main>
-    <script src="index.js"></script>
+		<script src="index.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
-let timer;
 let start = 44284;
+let checktime = 2000;
 video = document.querySelector('video');
 video.volume = 0;
 video.controls = 1;
@@ -9,14 +9,21 @@ document.title = start;
 document.getElementById("vn").innerHTML = start;
 video.load();
 
-video.addEventListener('loadedmetadata', function() {
-  clearTimeout(timer);
+const interval = setInterval(() => {
+  if (!video.readyState && !video.playing) {
+		logtofile();
+		next();
+  }
+}, checktime);
+
+document.getElementById("vn").onclick = function() {nrand()};
+
+video.addEventListener('loadeddata', function() {
 });
 video.addEventListener('ended', function() {
 	next();
 });
 video.addEventListener('error', function() {
-	console.log("didn't load "+document.title);
 	nrand();
 });
 
@@ -93,7 +100,7 @@ function voldn(){
 }
 
 function pause(){
-	video.playing ? video.pause() : video.play();
+	video.paused ? video.play() : video.pause();
 }
 function forw(){
 	video.currentTime += 2;
@@ -109,15 +116,16 @@ function slower(){
 	video.playbackRate >= 0.2 ? video.playbackRate -= 0.1 : video.playbackRate = 0.1;
 }
 
-function timer(q){
-	timer = setTimeout(function() {
-		console.log("didn't load "+document.title);
-	  q === "rand" ? nrand() : next();
-	}, 3000);
-}
-
 function getSrc(i){
 	return "http://cdnp.kink.com/imagedb/"+i+"/v/h/320/hires/"+i+"_7.mp4";
+}
+
+function logtofile(){
+	$.ajax({
+	 url: 'write.php',
+	 type: 'POST',
+	 data: { data: document.title },
+	});
 }
 /*
 	100k https://cdnp.kink.com/imagedb/104792/trailer/104792_trailer_high.mp4

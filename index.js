@@ -11,7 +11,6 @@ video.load();
 
 const interval = setInterval(() => {
   if (!video.readyState && !video.playing) {
-		logtofile();
 		next();
   }
 }, checktime);
@@ -67,7 +66,7 @@ document.onkeydown = function(e) {
 
 function nrand(){
 	maximum = 45000
-	minimum = 200
+	minimum = 2000
 	num = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 	document.title = num;
 	document.getElementById("vn").innerHTML = num;

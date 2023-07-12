@@ -120,13 +120,6 @@ function getSrc(i){
 	return "http://cdnp.kink.com/imagedb/"+i+"/v/h/320/hires/"+i+"_7.mp4";
 }
 
-function logtofile(){
-	$.ajax({
-	 url: 'write.php',
-	 type: 'POST',
-	 data: { data: document.title },
-	});
-}
 /*
 	100k https://cdnp.kink.com/imagedb/104792/trailer/104792_trailer_high.mp4
 	30k "https://cdnp.kink.com/imagedb/44284/v/h/320/hires/44284_7.mp4"

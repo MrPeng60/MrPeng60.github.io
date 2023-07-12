@@ -13,13 +13,13 @@ iframe.addEventListener('load', () => {
 });
 
 function nrand(){
-	iframe.setAttribute("src", "https://cdnp.kink.com/imagedb/104792/trailer/104792_trailer_high.mp4";
+	iframe.setAttribute("src", "https://cdnp.kink.com/imagedb/104792/trailer/104792_trailer_high.mp4");
 }
 function next(){
-	iframe.setAttribute("src", "https://cdnp.kink.com/imagedb/104792/trailer/104792_trailer_high.mp4";
+	iframe.setAttribute("src", "https://cdnp.kink.com/imagedb/104792/trailer/104792_trailer_high.mp4");
 }
 function prev(){
-	iframe.setAttribute("src", "the source";
+	iframe.setAttribute("src", "the source");
 }
 
 function volup(){

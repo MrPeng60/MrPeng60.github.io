@@ -71,8 +71,8 @@ function nrand(){
 
 	hilo = Math.random();
 
-	if(hilo >= 0.5){
-		maximum = 120000
+	if(hilo >= 0.9){
+		maximum = 107000
 		minimum = 100000
 	}
 
@@ -142,4 +142,6 @@ function getSrc(i){
 /*
 	100k https://cdnp.kink.com/imagedb/104792/trailer/104792_trailer_high.mp4
 	30k "https://cdnp.kink.com/imagedb/44284/v/h/320/hires/44284_7.mp4"
+
+	101005 (lowest 100k?)
 	*/

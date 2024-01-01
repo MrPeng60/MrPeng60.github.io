@@ -27,7 +27,7 @@ video.addEventListener('error', function() {
 });
 
 document.onkeydown = function(e) {
-    switch (e.keyCode) {
+    switch (e) {
     	case 39: //right arrow
     		next();
        	break;
@@ -53,7 +53,7 @@ document.onkeydown = function(e) {
       	voldn();
       	break;
       case 13: //Enter
-				exact();
+		exact();
       	break;
       case 16: //shift
       	nrand();
@@ -65,25 +65,37 @@ document.onkeydown = function(e) {
 }
 
 function nrand(){
+	
 	maximum = 45000
 	minimum = 2000
+
+	hilo = Math.random();
+
+	if(hilo >= 0.5){
+		maximum = 120000
+		minimum = 100000
+	}
+
 	num = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 	document.title = num;
 	document.getElementById("vn").innerHTML = num;
 	video.src = getSrc(num);
 }
+
 function next(){
 	x = parseInt(document.title) + 1;
 	document.title = x;
 	document.getElementById("vn").innerHTML = x;
 	video.src = getSrc(x);
 }
+
 function prev(){
 	y = parseInt(document.title) - 1;
 	document.title = y;
 	document.getElementById("vn").innerHTML = y;
 	video.src = getSrc(y);
 }
+
 function exact(){
 	z = parseInt(document.getElementById('tb').value);
 	document.title = z;
@@ -94,6 +106,7 @@ function exact(){
 function volup(){
 	video.volume <= 0.9 ? video.volume = video.volume+0.1: video.volume=1;
 }
+
 function voldn(){
 	video.volume >= 0.11 ? video.volume = video.volume-0.1: video.volume=0.01;
 }
@@ -101,9 +114,11 @@ function voldn(){
 function pause(){
 	video.paused ? video.play() : video.pause();
 }
+
 function forw(){
 	video.currentTime += 2;
 }
+
 function back(){
 	video.currentTime -= 2;
 }
@@ -111,12 +126,17 @@ function back(){
 function faster(){
 	video.playbackRate <= 3.9 ? video.playbackRate += 0.1 : video.playbackRate = 4;
 }
+
 function slower(){
 	video.playbackRate >= 0.2 ? video.playbackRate -= 0.1 : video.playbackRate = 0.1;
 }
 
 function getSrc(i){
-	return "http://cdnp.kink.com/imagedb/"+i+"/v/h/320/hires/"+i+"_7.mp4";
+	if(i >= 100000){
+		return "https://cdnp.kink.com/imagedb/"+i+"/trailer/"+i+"_trailer_high.mp4";
+	} else {
+		return "http://cdnp.kink.com/imagedb/"+i+"/v/h/320/hires/"+i+"_7.mp4";
+	}
 }
 
 /*

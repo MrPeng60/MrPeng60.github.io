@@ -23,7 +23,8 @@ video.addEventListener('ended', function() {
 	next();
 });
 video.addEventListener('error', function() {
-	nrand();
+	//nrand();
+	next();
 });
 
 document.onkeydown = function(e) {
